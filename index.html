@@ -505,7 +505,62 @@ footer p {
         font-size: 16px;
     }
 }
+    }
 
+    /* Sunday Worship Gallery */
+    .worship-gallery {
+        text-align: center;
+        margin: 50px auto;
+        max-width: 1100px;
+        padding: 20px;
+    }
+
+    .worship-gallery h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .worship-gallery p {
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+        transform: scale(1.04);
+    }
+
+    @media (max-width: 800px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-grid img {
+            height: 240px;
+        }
+    }
+
+</style>
 </style>
 </head>
 
@@ -650,19 +705,74 @@ footer p {
     </div>
 
 
-    <div class="services-grid">
+   <div class="service-card">
 
-        <div class="service-card">
+    <div class="service-icon">⛪</div>
 
-            <div class="service-icon">⛪</div>
+    <h3>Sunday Worship</h3>
 
-            <h3>Sunday Worship</h3>
+    <p>
+        <strong>9:30 AM – 12:45 PM</strong>
+    </p>
 
-            <p>
-                <strong>9:30 AM – 12:45 PM</strong>
-            </p>
+    <p>
+        Join us every Sunday for worship, prayer, praise and the Word of God.
+    </p>
 
-        </div>
+</div>
+    <div class="worship-gallery">
+
+    <h3>📸 Sunday Worship at RPC</h3>
+
+    <p>Experience fellowship, worship and prayer with us.</p>
+
+    <div class="gallery-grid">
+
+        <img src="images/sunday-service/DSCN6328.JPG"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0008.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0011.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0015.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0028.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0029.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0036.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0038.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260913-WA0049.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260920-WA0026.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260920-WA0027.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260920-WA0034.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260920-WA0076.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+        <img src="images/sunday-service/IMG-20260920-WA0108.jpg"
+             alt="Sunday Worship at Revelation Protestant Church">
+
+    </div>
+
+</div>
 
 
         <div class="service-card">
