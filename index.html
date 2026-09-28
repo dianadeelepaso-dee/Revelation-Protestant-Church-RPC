@@ -1,1 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="description" content="Revelation Protestant Church (RPC), Kajiado Central, along Juacali Road. Worship, prayer, fellowship and spiritual growth.">
+
+<title>Revelation Protestant Church (RPC) | Kajiado</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #fff;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.88);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 6%;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #e7b82f;
+}
+
+/* ================= COVER ================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.48),
+            rgba(0,0,0,0.68)
+        ),
+        url('images/cover/BISHOP%20%26%20MRS%20BISHOP%201.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 110px 20px 70px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-logo {
+    width: 145px;
+    height: 145px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    text-shadow: 2px 3px 8px rgba(0,0,0,0.8);
+}
+
+.hero h2 {
+    color: #f2c84b;
+    font-size: clamp(20px, 3vw, 30px);
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 720px;
+    margin: auto;
+}
+
+.hero-location {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #f2c84b;
+    color: #111;
+}
+
+.btn-primary:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #111;
+}
+
+/* ================= GENERAL ================= */
+
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #f7f7f7;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.bishop {
+    font-size: 20px;
+    font-weight: bold;
+    color: #765600;
+}
+
+/* ================= SERVICES ================= */
+
+.services-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 22px;
+}
+
+.service-card {
+    padding: 28px;
+    background: white;
+    border-radius: 14px;
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+    border-top: 4px solid #e7b82f;
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+}
+
+/* ================= CHURCH ACTIVITIES ================= */
+
+.activities {
+    background: #f7f7f7;
+}
+
+.activity-grid {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 22px;
+}
+
+.activity-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.07);
+}
+
+.activity-card h3 {
+    margin-bottom: 10px;
+}
+
+/* ================= SERMONS ================= */
+
+.sermons {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.88)
+        );
+
+    color: white;
+    text-align: center;
+}
+
+.sermons .section-title h2,
+.sermons .section-title p {
+    color: white;
+}
+
+.sermon-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.sermon-box p {
+    margin-bottom: 22px;
+    font-size: 17px;
+}
+
+.facebook-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #1877f2;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.facebook-btn:hover {
+    background: #0d65d9;
+}
+
+/* ================= LINKS ================= */
+
+.links {
+    background: white;
+}
+
+.links-grid {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.link-card {
+    display: block;
+    padding: 25px;
+    text-align: center;
+
+    background: #f7f7f7;
+    border-radius: 14px;
+
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+
+    transition: 0.3s;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    background: #eee;
+}
+
+.link-icon {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+/* ================= GIVING ================= */
+
+.giving {
+    background: #181818;
+    color: white;
+    text-align: center;
+}
+
+.giving .section-title h2,
+.giving .section-title p {
+    color: white;
+}
+
+.giving-box {
+    max-width: 550px;
+    margin: auto;
+
+    background: #252525;
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.paybill {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.account {
+    font-size: 20px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-grid {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 22px;
+}
+
+.contact-card {
+    background: #f7f7f7;
+    padding: 28px;
+    text-align: center;
+    border-radius: 14px;
+}
+
+.contact-card h3 {
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    color: #765600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #080808;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+.credit {
+    color: #f2c84b;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 9px 4%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .nav-brand span {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <a href="#home" class="nav-brand">
+
+        <img
+            src="images/cover/Logo.jpeg"
+            alt="RPC Logo"
+        >
+
+        <span>
+            Revelation Protestant Church
+        </span>
+
+    </a>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#services">Services</a></li>
+
+        <li><a href="#activities">Activities</a></li>
+
+        <li><a href="#sermons">Sermons</a></li>
+
+        <li><a href="#giving">Giving</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= COVER ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            src="images/cover/Logo.jpeg"
+            alt="Revelation Protestant Church Logo"
+            class="hero-logo"
+        >
+
+        <h1>
+            Revelation Protestant Church
+        </h1>
+
+        <h2>
+            RPC • Kajiado
+        </h2>
+
+        <p>
+            A place of worship, prayer, fellowship and spiritual growth.
+        </p>
+
+        <p class="hero-location">
+            📍 Kajiado Central, along Juacali Road
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#services"
+                class="btn btn-primary"
+            >
+                Join Us
+            </a>
+
+            <a
+                href="#sermons"
+                class="btn btn-secondary"
+            >
+                🎥 Watch Sermons
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>About Revelation Protestant Church</h2>
+
+        <p>
+            Welcome to RPC
+        </p>
+
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            Revelation Protestant Church (RPC) is located in
+            Kajiado Central, along Juacali Road.
+        </p>
+
+        <p>
+            We welcome people to come together for worship,
+            prayer, fellowship and spiritual growth.
+        </p>
+
+        <p class="bishop">
+            Led by Bishop Dr. Jeremiah Partari
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>Service Times</h2>
+
+        <p>
+            Join us in worship and prayer.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card">
+
+            <div class="service-icon">⛪</div>
+
+            <h3>Sunday Worship</h3>
+
+            <p>
+                <strong>9:30 AM – 12:45 PM</strong>
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🙏</div>
+
+            <h3>Monday – Thursday</h3>
+
+            <p>
+                <strong>6:00 PM – 7:30 PM</strong>
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🌙</div>
+
+            <h3>Friday Evening Prayer / Kesha</h3>
+
+            <p>
+                <strong>9:00 PM – 5:30 AM</strong>
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">📅</div>
+
+            <h3>Office</h3>
+
+            <p>
+                <strong>Every Wednesday</strong>
+            </p>
+
+            <p>
+                Sunday office is available after service.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACTIVITIES ================= -->
+
+<section class="activities" id="activities">
+
+    <div class="section-title">
+
+        <h2>Church Activities</h2>
+
+        <p>
+            Growing together in faith and fellowship.
+        </p>
+
+    </div>
+
+
+    <div class="activity-grid">
+
+        <div class="activity-card">
+
+            <div class="service-icon">📖</div>
+
+            <h3>Sunday School</h3>
+
+            <p>
+                Sunday School kids training and practice
+                takes place on Saturdays and Sundays.
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="service-icon">🙏</div>
+
+            <h3>Prayer & Kesha</h3>
+
+            <p>
+                Join the church community for prayer
+                and Friday evening Kesha.
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="service-icon">🤝</div>
+
+            <h3>Fellowship</h3>
+
+            <p>
+                Worship, fellowship and spiritual growth
+                within the church community.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERMONS ================= -->
+
+<section class="sermons" id="sermons">
+
+    <div class="section-title">
+
+        <h2>Watch Sermons & Stay Connected</h2>
+
+        <p>
+            Follow Revelation Protestant Church online
+            for sermons, worship, announcements and church updates.
+        </p>
+
+    </div>
+
+
+    <div class="sermon-box">
+
+        <p>
+            You can visit our Facebook page to watch
+            available sermons and follow the latest church updates.
+        </p>
+
+        <a
+            href="https://www.facebook.com/share/g/18uV3CE2Si/"
+            target="_blank"
+            class="facebook-btn"
+        >
+            📺 Watch Sermons on Facebook
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LINKS ================= -->
+
+<section class="links">
+
+    <div class="section-title">
+
+        <h2>Connect With RPC</h2>
+
+        <p>
+            Find Revelation Protestant Church online.
+        </p>
+
+    </div>
+
+
+    <div class="links-grid">
+
+        <a
+            href="https://www.facebook.com/share/g/18uV3CE2Si/"
+            target="_blank"
+            class="link-card"
+        >
+
+            <div class="link-icon">📘</div>
+
+            Facebook
+
+            <br>
+
+            <small>Kajiado RPC Church</small>
+
+        </a>
+
+
+        <a
+            href="https://wa.me/254721179459"
+            target="_blank"
+            class="link-card"
+        >
+
+            <div class="link-icon">💬</div>
+
+            WhatsApp
+
+            <br>
+
+            <small>Chat with the church</small>
+
+        </a>
+
+
+        <a
+            href="tel:+254721179459"
+            class="link-card"
+        >
+
+            <div class="link-icon">📞</div>
+
+            Call Us
+
+            <br>
+
+            <small>0721 179 459</small>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GIVING ================= -->
+
+<section class="giving" id="giving">
+
+    <div class="section-title">
+
+        <h2>Church Giving</h2>
+
+        <p>
+            For church contributions and giving:
+        </p>
+
+    </div>
+
+
+    <div class="giving-box">
+
+        <p class="paybill">
+            <strong>Paybill: 400200</strong>
+        </p>
+
+        <p class="account">
+            <strong>Account: 1022519</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            We welcome you to worship with us.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>📍 Location</h3>
+
+            <p>
+                Kajiado Central<br>
+                Along Juacali Road
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>👨‍⚖️ Bishop</h3>
+
+            <p>
+                Bishop Dr. Jeremiah Partari
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>📞 Phone</h3>
+
+            <p>
+                <a href="tel:+254721179459">
+                    0721 179 459
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>📘 Facebook</h3>
+
+            <p>
+                <a
+                    href="https://www.facebook.com/share/g/18uV3CE2Si/"
+                    target="_blank"
+                >
+                    Kajiado RPC Church
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Revelation Protestant Church (RPC)
+    </p>
+
+    <p>
+        Kajiado Central • Along Juacali Road
+    </p>
+
+    <p class="credit">
+        Compiled & Created by Diana Lepaso
+    </p>
+
+</footer>
+
+</body>
+</html>
