@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Praise & Worship Team | Revelation Protestant Church</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .logo-area h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            background: #8b5e3c;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: #a8754f;
+        }
+
+        .hero {
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("images/praise-team/IMG-20260913-WA0033.jpg") center/cover;
+
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin: 0 0 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .gallery-section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-section > p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.04);
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 7px 0;
+        }
+
+        @media (max-width: 800px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo-area">
+        <img src="images/cover/Logo.jpeg" alt="RPC Logo">
+
+        <h2>
+            Revelation Protestant Church
+        </h2>
+    </div>
+
+    <a href="index.html" class="back-btn">
+        ← Back to RPC
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>🎶 Praise & Worship Team</h1>
+
+    <p>
+        Leading the Church in Praise & Worship
+    </p>
+
+    <p>
+        Revelation Protestant Church
+    </p>
+
+</section>
+
+
+<section class="gallery-section">
+
+    <h2>📸 Praise & Worship Team</h2>
+
+    <p>
+        Moments of worship, praise, music and service to God.
+    </p>
+
+    <div class="gallery-grid">
+
+        <img src="images/praise-team/IMG-20260913-WA0033.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260913-WA0046.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260913-WA0051.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260913-WA0052.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260913-WA0061.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260913-WA0062.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260913-WA0065.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260920-WA0022.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260920-WA0053.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+        <img src="images/praise-team/IMG-20260920-WA0066.jpg"
+             alt="Praise and Worship Team at Revelation Protestant Church">
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p><strong>Revelation Protestant Church (RPC)</strong></p>
+
+    <p>Kajiado Central, along Juacali Road</p>
+
+    <p>📞 0721179459</p>
+
+    <p>Compiled & Created by Diana Lepaso</p>
+
+</footer>
+
+</body>
+</html>
