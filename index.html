@@ -560,7 +560,108 @@ footer p {
         }
     }
 
-</style>
+/* ============================= */
+/* CHURCH PHOTO ALBUMS */
+/* ============================= */
+
+.albums-section {
+    max-width: 1150px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.albums-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.albums-section > p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.album-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.album-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+}
+
+.album-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.album-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.album-card:hover .album-image img {
+    transform: scale(1.06);
+}
+
+.album-content {
+    padding: 20px;
+}
+
+.album-content h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.album-content p {
+    margin: 0 0 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.album-content span {
+    display: inline-block;
+    font-weight: bold;
+    color: #8b5e3c;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .albums-section h2 {
+        font-size: 27px;
+    }
+
+    .album-image {
+        height: 230px;
+    }
+
+}
 </style>
 </head>
 
