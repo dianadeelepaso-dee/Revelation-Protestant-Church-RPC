@@ -220,18 +220,42 @@ section {
 
 /* ================= SERVICES ================= */
 
-.services-grid {
-    max-width: 700px;
+..services-grid {
+    max-width: 600px;
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: 1fr;
 
-    gap: 22px;
+    gap: 14px;
 }
 
 .service-card {
-    padding: 28px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.08);
+
+    border-top: 3px solid #e7b82f;
+}
+
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.service-card h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.service-card p {
+    margin: 3px 0;
+    font-size: 14px;
+}
     background: white;
     border-radius: 14px;
     text-align: center;
@@ -559,33 +583,33 @@ footer p {
         }
     }
 
-/* ============================= */
+./* ============================= */
 /* CHURCH PHOTO ALBUMS */
 /* ============================= */
 
 .albums-section {
-    max-width: 1150px;
-    margin: 60px auto;
-    padding: 20px;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 10px 20px;
     text-align: center;
 }
 
 .albums-section h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 27px;
+    margin-bottom: 6px;
 }
 
 .albums-section > p {
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
-    margin-bottom: 35px;
+    margin-bottom: 22px;
 }
 
 .albums-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 25px;
-    max-width: 750px;
+    gap: 15px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -594,21 +618,27 @@ footer p {
     text-decoration: none;
     color: inherit;
     background: white;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
     text-align: left;
 }
 
 .album-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+    transform: translateY(-4px);
+    box-shadow:
+        0 7px 18px rgba(0,0,0,0.16);
 }
 
 .album-image {
     width: 100%;
-    height: 240px;
+    height: 150px;
     overflow: hidden;
 }
 
@@ -617,32 +647,35 @@ footer p {
     height: 100%;
     object-fit: cover;
     display: block;
+
     transition: transform 0.4s ease;
 }
 
 .album-card:hover .album-image img {
-    transform: scale(1.06);
+    transform: scale(1.04);
 }
 
 .album-content {
-    padding: 20px;
+    padding: 12px 16px;
 }
 
 .album-content h3 {
-    margin: 0 0 10px;
-    font-size: 22px;
+    margin: 0 0 5px;
+    font-size: 19px;
 }
 
 .album-content p {
-    margin: 0 0 15px;
+    margin: 0 0 7px;
     color: #666;
-    line-height: 1.5;
+    line-height: 1.4;
+    font-size: 14px;
 }
 
 .album-content span {
     display: inline-block;
     font-weight: bold;
     color: #8b5e3c;
+    font-size: 14px;
 }
 
 
