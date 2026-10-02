@@ -124,7 +124,105 @@
         .gallery img:hover {
             transform: scale(1.03);
         }
+/* ============================= */
+/* PHOTO LIGHTBOX */
+/* ============================= */
 
+.gallery img {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+
+    cursor: pointer;
+    user-select: none;
+
+    padding: 15px;
+}
+
+.lightbox-prev {
+    left: 15px;
+}
+
+.lightbox-next {
+    right: 15px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 32px;
+        padding: 8px;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 32px;
+    }
+}
         .bottom {
             text-align: center;
             padding: 20px 20px 50px;
@@ -187,6 +285,7 @@
                 font-size: 30px;
             }
         }
+        
     </style>
 </head>
 
@@ -300,6 +399,142 @@
     <p>Compiled & Created by Diana Lepaso</p>
 
 </footer>
+<!-- ============================= -->
+<!-- PHOTO LIGHTBOX -->
+<!-- ============================= -->
 
+<div class="lightbox" id="lightbox">
+
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+
+    <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+
+    <img id="lightboxImage" src="" alt="RPC Photo">
+
+    <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+
+</div>
+    <script>
+
+const galleryImages = document.querySelectorAll(".gallery img");
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+const closeButton = document.getElementById("lightboxClose");
+const prevButton = document.getElementById("lightboxPrev");
+const nextButton = document.getElementById("lightboxNext");
+
+let currentImage = 0;
+
+
+/* Open image */
+
+galleryImages.forEach((image, index) => {
+
+    image.addEventListener("click", () => {
+
+        currentImage = index;
+
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+
+        lightbox.classList.add("active");
+
+    });
+
+});
+
+
+/* Close */
+
+closeButton.addEventListener("click", () => {
+
+    lightbox.classList.remove("active");
+
+});
+
+
+/* Previous */
+
+prevButton.addEventListener("click", () => {
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = galleryImages.length - 1;
+    }
+
+    lightboxImage.src = galleryImages[currentImage].src;
+    lightboxImage.alt = galleryImages[currentImage].alt;
+
+});
+
+
+/* Next */
+
+nextButton.addEventListener("click", () => {
+
+    currentImage++;
+
+    if (currentImage >= galleryImages.length) {
+        currentImage = 0;
+    }
+
+    lightboxImage.src = galleryImages[currentImage].src;
+    lightboxImage.alt = galleryImages[currentImage].alt;
+
+});
+
+
+/* Close when clicking outside the photo */
+
+lightbox.addEventListener("click", (event) => {
+
+    if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+    }
+
+});
+
+
+/* Keyboard controls */
+
+document.addEventListener("keydown", (event) => {
+
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+    }
+
+    if (event.key === "ArrowLeft") {
+        prevButton.click();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextButton.click();
+    }
+
+});
+
+
+/* Prevent right-click and dragging */
+
+galleryImages.forEach((image) => {
+
+    image.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+    });
+
+    image.addEventListener("dragstart", (event) => {
+        event.preventDefault();
+    });
+
+});
+
+</script>
 </body>
 </html>
