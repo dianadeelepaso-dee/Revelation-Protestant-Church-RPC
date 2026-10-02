@@ -534,7 +534,50 @@ galleryImages.forEach((image) => {
     });
 
 });
+// =============================
+// EXTRA PHOTO PROTECTION
+// =============================
 
+// Disable right-click on the entire page
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
+
+// Disable dragging
+document.addEventListener("dragstart", function(event) {
+    if (event.target.tagName === "IMG") {
+        event.preventDefault();
+    }
+});
+
+// Disable copying
+document.addEventListener("copy", function(event) {
+    if (event.target.closest(".gallery, .lightbox")) {
+        event.preventDefault();
+    }
+});
+
+// Block common shortcuts while the gallery is being viewed
+document.addEventListener("keydown", function(event) {
+
+    if (
+        (event.ctrlKey && ["s", "u", "c", "x"].includes(event.key.toLowerCase())) ||
+        (event.ctrlKey && event.shiftKey && ["i", "j"].includes(event.key.toLowerCase())) ||
+        event.key === "F12"
+    ) {
+        event.preventDefault();
+    }
+
+});
+
+// Extra protection for the enlarged image
+lightboxImage.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+});
+
+lightboxImage.addEventListener("dragstart", function(event) {
+    event.preventDefault();
+});
 </script>
 </body>
 </html>
