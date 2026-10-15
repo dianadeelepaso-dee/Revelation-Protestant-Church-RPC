@@ -480,5 +480,117 @@
 
 </footer>
 
+<!-- ============================= -->
+<!-- SUNDAY SCHOOL PHOTO LIGHTBOX -->
+<!-- ============================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+
+    <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+
+    <img id="lightboxImage" src="" alt="RPC Sunday School Photo">
+
+    <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+
+</div>
+
+
+<script>
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+const closeButton = document.getElementById("lightboxClose");
+const prevButton = document.getElementById("lightboxPrev");
+const nextButton = document.getElementById("lightboxNext");
+
+let currentImage = 0;
+
+// Open photo
+galleryImages.forEach((image, index) => {
+    image.addEventListener("click", () => {
+        currentImage = index;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("active");
+    });
+});
+
+// Close photo viewer
+closeButton.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+});
+
+// Previous photo
+prevButton.addEventListener("click", () => {
+    currentImage =
+        (currentImage - 1 + galleryImages.length) % galleryImages.length;
+
+    lightboxImage.src = galleryImages[currentImage].src;
+    lightboxImage.alt = galleryImages[currentImage].alt;
+});
+
+// Next photo
+nextButton.addEventListener("click", () => {
+    currentImage = (currentImage + 1) % galleryImages.length;
+
+    lightboxImage.src = galleryImages[currentImage].src;
+    lightboxImage.alt = galleryImages[currentImage].alt;
+});
+
+// Close when clicking the dark background
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+    }
+});
+
+// Keyboard navigation
+document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+    } else if (event.key === "ArrowLeft") {
+        prevButton.click();
+    } else if (event.key === "ArrowRight") {
+        nextButton.click();
+    }
+});
+
+// Discourage casual image copying and saving
+document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener("dragstart", (event) => {
+    if (event.target.tagName === "IMG") {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener("copy", (event) => {
+    if (event.target.closest(".gallery-grid, .lightbox")) {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (
+        (event.ctrlKey &&
+            ["s", "u", "c", "x"].includes(event.key.toLowerCase())) ||
+        (event.ctrlKey && event.shiftKey &&
+            ["i", "j"].includes(event.key.toLowerCase())) ||
+        event.key === "F12"
+    ) {
+        event.preventDefault();
+    }
+});
+
+</script>
+    
 </body>
 </html>
